@@ -22,6 +22,7 @@ class TransactionRepositoryTest {
 
         //then
         assertEquals(1, transactionRepository.transactions.size());
+        assertEquals(100, transactionRepository.transactions.get(0).amount());
     }
 
 }
