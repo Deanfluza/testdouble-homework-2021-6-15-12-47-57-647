@@ -24,4 +24,20 @@ class TransactionTest {
         //then
         assertEquals(1, result);
     }
+
+    @Test
+    void should_return_1_when_compare_transaction_date_is_same_as_my_transaction() {
+        //given
+        int amount = anyInt();
+        String now = "16/06/2021";
+        String past = "16/06/2021";
+        Transaction transactionForNow = new Transaction(now, amount);
+        Transaction transactionForPast = new Transaction(past, amount);
+
+        //when
+        int result = transactionForNow.compareTo(transactionForPast);
+
+        //then
+        assertEquals(1, result);
+    }
 }
